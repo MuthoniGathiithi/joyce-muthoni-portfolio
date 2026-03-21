@@ -407,7 +407,9 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; padding-top: 90px; }
-  .hero-right { display: none; }
+  .hero-right { display: flex; justify-content: center; margin-bottom: 2rem; order: -1; }
+  .photo-frame { width: 180px; height: 220px; }
+  .photo-badge { display: none; }
   .about-layout, .skills-layout, .contact-layout, .edu-block { grid-template-columns: 1fr; }
   .project-card.featured { flex-direction: column; }
   .project-card.featured .project-img { flex: none; height: 220px; min-height: unset; }
@@ -423,6 +425,12 @@ footer {
 @media (max-width: 480px) {
   body { cursor: auto; }
   .cursor, .cursor-ring { display: none; }
+  .hero-right { display: flex; justify-content: center; margin-bottom: 1.5rem; order: -1; }
+  .photo-frame { width: 150px; height: 185px; }
+  .photo-badge { display: none; }
+  .hero-right { display: flex; justify-content: center; margin-bottom: 1.5rem; order: -1; }
+  .photo-frame { width: 150px; height: 185px; }
+  .photo-badge { display: none; }
   nav { padding: 0 1.2rem; height: 56px; }
   .nav-cta { padding: 6px 14px; font-size: 11px; }
   .hero { padding: 70px 1.2rem 3rem; gap: 2rem; }
@@ -475,7 +483,7 @@ footer {
     <li><a href="#education">education</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
-  <a href="/cdn-cgi/l/email-protection#87e0e6f3efeeeef3efeeede8fee4e2b0b3c7e0eae6eeeba9e4e8ea" class="nav-cta">hire me →</a>
+  <a href="https://wa.me/254742278735?text=Hi%20Joyce%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20love%20to%20work%20with%20you!" target="_blank" class="nav-cta">💬 hire me</a>
 </nav>
 
 <!-- HERO -->
@@ -483,7 +491,7 @@ footer {
   <div>
     <div class="hero-eyebrow">Nairobi, Kenya · Open to opportunities</div>
     <h1 class="hero-name">Joyce<br>Muthoni<br><em>Gathiithi</em></h1>
-    <p class="hero-bio">Software developer, AI engineer, and connectivity advocate. I build things that work — from face-recognition systems to getting Kenyan classrooms online with Starlink.</p>
+    <p class="hero-bio">Software developer, AI engineer, and Network & Internet Solutions. I build things that work — from face-recognition systems to getting Kenyan classrooms online with Starlink.</p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg>
@@ -521,7 +529,7 @@ footer {
     <div class="section-label reveal">About</div>
     <div class="about-layout">
       <div class="about-text reveal">
-        <h2 class="section-heading">Builder.<br>Connector.<br>Technologist.</h2>
+        <h2 class="section-heading">Code.<br>Create.<br>Connect.</h2>
         <div class="about-quote">"I don't just write code — I build things that actually change how people live."</div>
         <p>I'm a 4th-year student at KCA University studying Applied Computing, enrolled in 2023 with one goal: use technology to fix real problems for real people in Kenya.</p>
         <p>Right now I'm working on <strong>getting schools connected to Starlink</strong>, helping <strong>businesses integrate AI</strong>, and building products that are actually useful — not just portfolio pieces.</p>
@@ -704,8 +712,13 @@ footer {
         <p class="contact-subtext">Whether you need an AI integration, a web product built from scratch, or just want to talk tech — reach out. I read every message.</p>
         <a href="/cdn-cgi/l/email-protection#94f3f5e0fcfdfde0fcfdfefbedf7f1a3a0d4f3f9f5fdf8baf7fbf9" class="contact-email-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          Say hello
-        </a>
+            Email me
+          </a>
+          <a href="https://wa.me/254742278735?text=Hi%20Joyce%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20love%20to%20work%20with%20you!" target="_blank" class="contact-email-btn" style="background:#25d366;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+            WhatsApp
+          </a>
+        </div
       </div>
       <div class="contact-links reveal">
         <a href="/cdn-cgi/l/email-protection#6a0d0b1e0203031e0203000513090f5d5e2a0d070b030644090507" class="contact-link">
@@ -735,8 +748,8 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-txt">© 2025 Joyce Muthoni Gathiithi — Nairobi, Kenya 🇰🇪</div>
-  <div class="footer-txt">Built from scratch. No templates.</div>
+  <div class="footer-txt">© 2026 Joyce Muthoni Gathiithi — Nairobi, Kenya. </div>
+
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
