@@ -1,31 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baking Inspiration</title>
-  <style>
-    :root { --bg:#ffffff; --panel:#ffffff; --text:#e5e7eb; --muted:#94a3b8; --blue:#2563eb; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
-    .page { max-width:900px; margin:0 auto; padding:2.5rem 1.25rem 4rem; }
-    a { color:var(--blue); text-decoration:none; }
-    .card { background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:1.5rem; margin-bottom:1rem; }
-    h1 { font-size:2rem; margin-bottom:.5rem; }
-    p { color:var(--muted); }
-  
-    .back { display:inline-block; margin-top:1rem; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Baking Inspiration</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --text: #111827;
+    --muted: #4b5563;
+    --blue: #2563eb;
+    --blue-bright: #3b82f6;
+    --wire: rgba(15, 23, 42, 0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Outfit', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 4rem;
+  }
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  .subtitle {
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--wire);
+    border-radius: 18px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  }
+  .card img {
+    width: 100%;
+    max-width: 420px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+  .caption {
+    color: var(--muted);
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  a.back {
+    color: var(--blue-bright);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1.5px solid var(--blue-bright);
+    padding-bottom: 2px;
+    display: inline-block;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  a.back::after {
+    content: '↗';
+    font-size: 0.9em;
+    margin-left: 3px;
+    vertical-align: super;
+    display: inline-block;
+    opacity: 0.65;
+  }
+  a.back:hover {
+    color: var(--white, #000);
+    transform: translateY(-1px);
+  }
+  .back-wrap {
+    text-align: center;
+    margin-top: 1.75rem;
+  }
+</style>
 </head>
 <body>
-  <div class="page">
-    <div class="card">
-      
-      
-        <img src="assets/cake.jpeg" alt="A cake" />
+<div class="page">
+  <h1>Baking</h1>
+  <p class="subtitle">Another creative process — every great result starts with simple ingredients.</p>
 
-      <a class="back" href="index.html">← Back to portfolio</a>
-    </div>
+  <div class="card">
+    <img src="assets/cake.jpeg" alt="A cake" />
+    <p class="caption">One of my recent bakes.</p>
   </div>
+
+  <div class="back-wrap">
+    <a class="back" href="index.html">← Back to portfolio</a>
+  </div>
+</div>
 </body>
 </html>
