@@ -1,232 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joyce Muthoni — Developer & AI Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --ink: #ffffff;
-  --ink2: #f8fafc;
-  --ink3: #f1f5f9;
-  --surface: #ffffff;
-  --wire: rgba(15,23,42,0.08);
-  --wire2: rgba(15,23,42,0.14);
-  --blue: #2563eb;
-  --blue-bright: #3b82f6;
-  --blue-glow: rgba(37,99,235,0.16);
-  --blue-pale: rgba(59,130,246,0.08);
-  --cyan: #06b6d4;
-  --white: #111827;
-  --muted: #4b5563;
-  --muted2: #6b7280;
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Outfit', sans-serif;
-  --font-mono: 'Space Mono', monospace;
-}
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-body);
-  background: var(--ink);
-  color: var(--white);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-/* HERO */
-.hero {
-  min-height: 100vh; display: flex;
-  align-items: flex-start; /* pin content to top */
-  justify-content: center;
-  padding: 60px 3rem 4rem;
-  max-width: 1300px; margin: 0 auto;
-  position: relative;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyce Muthoni — Developer & Graphic Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #ffffff;
+      --ink2: #f8fafc;
+      --surface: #ffffff;
+      --wire: rgba(15, 23, 42, 0.08);
+      --blue: #2563eb;
+      --blue-bright: #3b82f6;
+      --blue-hover: #1d4ed8;
+      --white: #111827;
+      --muted: #4b5563;
+      --muted2: #6b7280;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
 
-/* Hero intro */
-.hero-intro {
-  width: min(900px, 100%);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.1rem;
-  padding: 0 0 1.25rem;
-  border: none;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  backdrop-filter: none;
-}
-.hero-photo-wrap {
-  width: 240px;
-  height: 240px;
-  border-radius: 0; /* clear square */
-  overflow: hidden;
-  border: none;
-  box-shadow: none;
-  background: transparent;
-}
-.hero-photo-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* preserve aspect, fill square without distortion */
-  object-position: center;
-  display: block;
-}
-.hero-intro p {
-  font-size: 1.15rem;
-  line-height: 1.85;
-  color: var(--muted);
-  width: min(100%, 720px);
-  margin: 0 auto;
-  text-align: center;
-}
-.hero-intro a {
-  color: var(--blue-bright);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1.5px solid rgba(37, 99, 235, 0.35);
-  padding-bottom: 2px;
-  display: inline-block;
-  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-.hero-intro a:hover {
-  color: var(--white);
-  border-color: var(--blue-bright);
-  transform: translateY(-1px);
-}
-.hero-intro .accent {
-  color: var(--white);
-  font-weight: 700;
-}
-.hero-intro .school-link {
-  color: var(--blue-bright);
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1.5px solid rgba(37, 99, 235, 0.35);
-}
-.hero-intro .school-link:hover {
-  color: var(--white);
-  border-color: var(--blue-bright);
-}
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.scroll-hint {
-  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  opacity: 0; animation: fadeIn 1s ease 1.5s forwards;
-}
-.scroll-hint span { font-family: var(--font-mono); font-size: 10px; color: var(--muted2); letter-spacing: 2px; text-transform: uppercase; }
-.scroll-line {
-  width: 1px; height: 48px;
-  background: linear-gradient(180deg, var(--wire2), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* SECTIONS */
-section { padding: 7rem 3rem; }
-.section-inner { max-width: 1200px; margin: 0 auto; }
-.section-label {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--blue-bright); margin-bottom: 1rem;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-label::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--blue); }
-.section-heading {
-  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800; letter-spacing: -1.5px; line-height: 1.05; color: var(--white); margin-bottom: 1rem;
-}
+    body {
+      font-family: var(--font-body);
+      background: var(--ink);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-/* ABOUT */
-#about { background: var(--ink2); border-top: 1px solid var(--wire); }
-.about-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
-.about-text p { font-size: 16px; color: var(--muted); font-weight: 300; line-height: 1.85; margin-bottom: 1.2rem; }
-.about-text p strong { color: var(--white); font-weight: 500; }
-.about-quote {
-  margin: 2rem 0; padding: 1.25rem 0 1.25rem 1.5rem;
-  border-left: 2px solid var(--blue);
-  font-family: var(--font-display); font-size: 18px; font-weight: 600;
-  color: var(--white); letter-spacing: -0.3px; line-height: 1.4;
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 3rem 4rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      position: relative;
+    }
 
-/* ANIMATIONS */
-@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-@keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
-@keyframes scrollPulse { 0%,100%{opacity:.3;} 50%{opacity:1;} }
+    .hero-intro {
+      width: min(900px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.1rem;
+      padding: 0 0 1.25rem;
+    }
 
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+    .hero-photo-wrap {
+      width: 240px;
+      height: 240px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: transparent;
+      margin-bottom: 1rem;
+      position: relative;
+      box-shadow: 0 0 0 3px var(--blue-bright), 0 20px 60px rgba(37, 99, 235, 0.25);
+      animation: profileFloat 3s ease-in-out infinite;
+    }
 
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.3s ease;
+    }
 
+    .hero-photo-wrap:hover img {
+      transform: scale(1.05);
+    }
 
+    @keyframes profileFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; padding-top: 90px; }
-    .about-layout, .skills-layout, .contact-layout, .edu-block { grid-template-columns: 1fr; }
-  .project-card.featured { flex-direction: column; }
-  .project-card.featured .project-img { flex: none; height: 220px; min-height: unset; }
-  .projects-grid { grid-template-columns: 1fr; }
-  section { padding: 5rem 1.5rem; }
-  .hero { padding: 80px 1.5rem 3rem; }
-  .starlink-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
-}
+    .hero-intro p {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: var(--muted);
+      width: min(100%, 720px);
+      margin: 0 auto;
+      text-align: center;
+    }
 
-@media (max-width: 900px) {
-  /* slightly smaller profile on tablet */
-  .hero-photo-wrap { width: 200px; height: 200px; }
-}
-@media (max-width: 480px) {
-  /* smaller profile on phones */
-  .hero-photo-wrap { width: 160px; height: 160px; }
-}
+    .hero-intro a {
+      color: var(--blue-bright);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(37, 99, 235, 0.35);
+      padding-bottom: 2px;
+      display: inline-block;
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
 
-</style>
+    .hero-intro a:hover {
+      color: var(--white);
+      border-color: var(--blue-bright);
+      transform: translateY(-1px);
+    }
+
+    .hero-intro .accent {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .hero-intro .school-link {
+      color: var(--blue-bright);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(37, 99, 235, 0.35);
+    }
+
+    .hero-intro .school-link:hover {
+      color: var(--white);
+      border-color: var(--blue-bright);
+    }
+
+    /* CTA BUTTONS */
+    .cta-container {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.1rem 2.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 2px solid;
+      font-family: var(--font-display);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .cta-button:hover::before {
+      left: 0;
+    }
+
+    .cta-arrow {
+      transition: transform 0.3s ease;
+      font-size: 1.1em;
+    }
+
+    .cta-button:hover .cta-arrow {
+      transform: translateX(4px);
+    }
+
+    .cta-primary {
+      background: var(--blue-bright);
+      color: var(--ink);
+      border-color: var(--blue-bright);
+    }
+
+    .cta-primary:hover {
+      background: var(--blue-hover);
+      border-color: var(--blue-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.35);
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: var(--blue-bright);
+      border-color: var(--blue-bright);
+    }
+
+    .cta-secondary:hover {
+      background: rgba(59, 130, 246, 0.1);
+      border-color: var(--blue-hover);
+      color: var(--blue-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        padding: 80px 1.5rem 3rem;
+      }
+
+      .hero-photo-wrap {
+        width: 200px;
+        height: 200px;
+      }
+
+      .hero-intro p {
+        font-size: 1rem;
+      }
+
+      .cta-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 60px 1rem 2rem;
+        min-height: auto;
+      }
+
+      .hero-photo-wrap {
+        width: 160px;
+        height: 160px;
+      }
+
+      .hero-intro p {
+        font-size: 0.95rem;
+      }
+
+      .cta-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-intro">
+      <div class="hero-photo-wrap">
+        <img src="assets/profile.jpg" alt="Joyce Muthoni" loading="eager">
+      </div>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-intro">
-   <div photo-wrap class="hero-photo-wrap">
-      <img src="assets/profile.jpg" alt="Joyce Muthoni" loading="eager">
-</div>
-    <p>
-      Hi, I'm <span class="accent">Muthoni Gathiithi</span>, a final-year <span class="accent">Bachelor of Science in Applied Computing</span> student at <a class="school-link" href="www.kca.ac.ke/" target="_blank" rel="noopener">KCA University</a>. Over the past four years, I've grown into someone who enjoys building digital solutions that are both functional and visually engaging.
-    </p>
-    <p>
-      I'm passionate about <a href="coding.html">Software Development</a> and <a href="graphic-design.html">Graphic Design</a> — one challenges my logic, while the other sharpens my creativity and attention to user experience. I am proficient in <a href="languages.html">Programming Languages</a> that help me build reliable, usable products.
-    </p>
-    <p>
-      Alongside my studies, I've gained hands-on experience working with <a class="school-link" href="https://alamaai.com/" target="_blank" rel="noopener">Alama AI Technologies</a>, where I've contributed to software testing, quality assurance, digital design, and knowledge management.
-    </p>
-    <p>
-      Outside of technology, you'll probably find me <a href="./baking.html" target="_blank" rel="noopener"> baking</a>—another creative process that reminds me every great result starts with simple ingredients.
-    </p>
-  <div style="display:none;">
-    
+      <p>
+        Hi, I'm <span class="accent">Muthoni Gathiithi</span>, a final-year <span class="accent">Bachelor of Science in Applied Computing</span> student at <a class="school-link" href="https://www.kca.ac.ke/" target="_blank" rel="noopener">KCA University</a>. Over the past four years, I've grown into someone who enjoys building digital solutions that are both functional and visually engaging.
+      </p>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Scroll reveal
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{
-    
-    if(e.isIntersecting){
-      setTimeout(()=>e.target.classList.add('visible'), i*70);
-      io.unobserve(e.target);
-    }
-  });
-},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+      <p>
+        I'm passionate about <a href="coding.html">Software Development</a> and <a href="graphic-design.html">Graphic Design</a> — one challenges my logic, while the other sharpens my creativity and attention to user experience. I am proficient in <a href="languages.html">Programming Languages</a> that help me build reliable, usable products.
+      </p>
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
-  });
-});
-</script>
+      <p>
+        Alongside my studies, I've gained hands-on experience working with <a class="school-link" href="https://alamaai.com/" target="_blank" rel="noopener">Alama AI Technologies</a>, where I've contributed to software testing, quality assurance, digital design, and knowledge management.
+      </p>
+
+      <p>
+        Outside of technology, you'll probably find me <a href="./baking.html" target="_blank" rel="noopener">baking</a>—another creative process that reminds me every great result starts with simple ingredients.
+      </p>
+
+      <!-- CTA BUTTONS -->
+      <div class="cta-container">
+        <a href="coding.html" class="cta-button cta-primary">
+          View My Coding Works
+          <span class="cta-arrow">→</span>
+        </a>
+        <a href="graphic-design.html" class="cta-button cta-secondary">
+          View My Design Work
+          <span class="cta-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 70);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) {
+          e.preventDefault();
+          t.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -7,14 +7,11 @@
   <title>Graphic Design Portfolio</title>
   <style>
     :root {
-      --bg: #07111f;
-      --panel: #111827;
+      --bg: #000000;
       --text: #e5e7eb;
       --muted: #94a3b8;
       --accent: #2563eb;
       --accent-hover: #1d4ed8;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(37, 99, 235, 0.2);
     }
 
     * {
@@ -42,7 +39,6 @@
     header {
       margin-bottom: 3rem;
       padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
     }
 
     h1 {
@@ -108,17 +104,13 @@
     .gallery-item {
       position: relative;
       overflow: hidden;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: var(--panel);
+      border-radius: 8px;
       transition: all 0.3s ease;
       cursor: pointer;
     }
 
     .gallery-item:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1);
-      transform: translateY(-4px);
+      transform: scale(1.02);
     }
 
     .gallery-item img,
@@ -131,11 +123,21 @@
 
     .gallery-item:hover img,
     .gallery-item:hover video {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     .gallery-item video {
       background: var(--bg);
+    }
+
+    .gallery-item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
     }
 
     .navigation {
@@ -143,7 +145,6 @@
       gap: 1rem;
       margin-top: 2rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--border);
     }
 
     .back-link {
@@ -151,9 +152,6 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.75rem 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: transparent;
       color: var(--accent);
       font-size: 1rem;
       transition: all 0.2s ease;
@@ -161,8 +159,6 @@
     }
 
     .back-link:hover {
-      background: rgba(37, 99, 235, 0.1);
-      border-color: var(--accent);
       transform: translateX(-4px);
     }
 
@@ -185,10 +181,94 @@
     .skip-link:focus {
       top: 0;
     }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content img,
+    .modal-content video {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .modal-close {
+        top: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+      }
+    }
   </style>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <img id="modalImage" alt="" />
+    </div>
+  </div>
 
   <main id="main">
     <header>
@@ -200,25 +280,31 @@
       <h2>Featured Work</h2>
       <div class="gallery">
         <div class="gallery-item">
-          <video width="100%" height="auto" controls aria-label="Design presentation video">
+          <video width="100%" height="auto" controls aria-label="UN Video Practice">
             <source src="assets/GathithiJoyce_UNON_JO276069_Task5_Video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+          <p class="gallery-item-title">UN Video Practice</p>
         </div>
         <div class="gallery-item">
           <img src="assets/UNENVIRONMENTDAYPRACTISE2.png" alt="UN Environment Day Design" />
+          <p class="gallery-item-title">UN Environment Day</p>
         </div>
         <div class="gallery-item">
           <img src="assets/UNNAIROBIRESILIENCEFORUM.png" alt="UN Nairobi Resilience Forum" />
+          <p class="gallery-item-title">Nairobi Resilience Forum</p>
         </div>
         <div class="gallery-item">
           <img src="assets/UNenviromnet day practise.png" alt="UN Environment Day Practice Design" />
+          <p class="gallery-item-title">Reading Practice</p>
         </div>
         <div class="gallery-item">
           <img src="assets/alamaaipromoimage.png" alt="Alama AI Promo Image" />
+          <p class="gallery-item-title">Alama Promo Facebook</p>
         </div>
         <div class="gallery-item">
           <img src="assets/invitationcard.png" alt="Invitation Card Design" />
+          <p class="gallery-item-title">Graduation Invitation</p>
         </div>
       </div>
     </section>
@@ -227,5 +313,36 @@
       <a href="index.html" class="back-link">← Back to portfolio</a>
     </nav>
   </main>
+
+  <script>
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.querySelector('.modal-close');
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        modalImage.src = img.src;
+        modalImage.alt = img.alt;
+        modal.classList.add('active');
+      });
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
