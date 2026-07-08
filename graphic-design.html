@@ -3,33 +3,229 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Graphic Design Tasks</title>
+  <meta name="description" content="Graphic design portfolio showcasing creative work and design projects" />
+  <title>Graphic Design Portfolio</title>
   <style>
-    :root { --bg:#07111f; --panel:#111827; --text:#e5e7eb; --muted:#94a3b8; --blue:#2563eb; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
-    .page { max-width:900px; margin:0 auto; padding:2.5rem 1.25rem 4rem; }
-    a { color:var(--blue); text-decoration:none; }
-    .card { background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:1.5rem; margin-bottom:1rem; }
-    h1 { font-size:2rem; margin-bottom:.5rem; }
-    p { color:var(--muted); }
-    ul { color:var(--muted); padding-left:1.2rem; }
-    .back { display:inline-block; margin-top:1rem; }
+    :root {
+      --bg: #07111f;
+      --panel: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(37, 99, 235, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 2.5rem 0 1.5rem 0;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--muted);
+      margin: 0 0 1rem 0;
+    }
+
+    ul {
+      color: var(--muted);
+      padding-left: 1.5rem;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:hover video {
+      transform: scale(1.05);
+    }
+
+    .gallery-item video {
+      background: var(--bg);
+    }
+
+    .navigation {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--accent);
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .back-link:hover {
+      background: rgba(37, 99, 235, 0.1);
+      border-color: var(--accent);
+      transform: translateX(-4px);
+    }
+
+    .back-link:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="card">
-      <h1>Graphic Design Tasks</h1>
-      <p>Here are a few design-focused tasks and ideas that reflect how I like to combine creativity with purpose.</p>
-      <ul>
-        <li>Brand identity concepts for student-led startups</li>
-        <li>Poster and flyer design for events and outreach programs</li>
-        <li>UI mockups that make digital products both useful and visually appealing</li>
-        <li>Social media graphics aligned to a clear story and audience</li>
-      </ul>
-      <a class="back" href="index.html">← Back to portfolio</a>
-    </div>
-  </div>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <main id="main">
+    <header>
+      <h1>Graphic Design Portfolio</h1>
+      <p class="subtitle">Creative design work and visual projects</p>
+    </header>
+
+    <section>
+      <h2>Featured Work</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <video width="100%" height="auto" controls aria-label="Design presentation video">
+            <source src="assets/GathithiJoyce_UNON_JO276069_Task5_Video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/UNENVIRONMENTDAYPRACTISE2.png" alt="UN Environment Day Design" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/UNNAIROBIRESILIENCEFORUM.png" alt="UN Nairobi Resilience Forum" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/UNenviromnet day practise.png" alt="UN Environment Day Practice Design" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/alamaaipromoimage.png" alt="Alama AI Promo Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/invitationcard.png" alt="Invitation Card Design" />
+        </div>
+      </div>
+    </section>
+
+    <nav class="navigation">
+      <a href="index.html" class="back-link">← Back to portfolio</a>
+    </nav>
+  </main>
 </body>
 </html>
