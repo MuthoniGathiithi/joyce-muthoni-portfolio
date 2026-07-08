@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programming Languages</title>
+  <style>
+    :root { --bg:#f8fafc; --panel:#ffffff; --text:#0f172a; --muted:#475569; --blue:#2563eb; --border:#e2e8f0; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    .page { max-width:900px; margin:0 auto; padding:2.5rem 1.25rem 4rem; }
+    a { color:var(--blue); text-decoration:none; }
+    .card { background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:1.5rem; margin-bottom:1rem; box-shadow:0 10px 30px rgba(15,23,42,.06); }
+    h1 { font-size:2rem; margin-bottom:.5rem; }
+    p { color:var(--muted); }
+    .chips { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem; }
+    .chip { background:rgba(37,99,235,.12); color:var(--blue); padding:.6rem .9rem; border-radius:999px; }
+    .section-inner { max-width: 100%; }
+    .section-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: .75rem; font-weight: 700; }
+    .section-heading { font-size: 1.6rem; margin: 0; color: var(--text); }
+    .skills-layout { display:grid; gap:1.25rem; }
+    .skills-board { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap: .8rem; margin-top: 1rem; }
+    .skill-item { background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding: .9rem 1rem; }
+    .skill-num { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--blue); margin-bottom: .35rem; font-weight:700; }
+    .skill-name { font-size: 1rem; font-weight:700; color:var(--text); margin-bottom: 2px; }
+    .skill-type { font-size: .85rem; color:var(--muted); }
+    .back { display:inline-block; margin-top:1rem; }
+    @media (max-width: 640px) {
+      .skills-board { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label reveal">Skills</div>
+    <div class="skills-layout">
+      <div class="skills-intro reveal">
+        <h2 class="section-heading">What I work with</h2>
+        <p style="margin-top:1rem;">Built from real projects, not just tutorials. I pick the right tool for the job and learn what I need when I need it.</p>
+      </div>
+      <div class="skills-board reveal">
+        <div class="skill-item"><div class="skill-num">01</div><div class="skill-name">Python</div><div class="skill-type">Language · AI/ML</div></div>
+        <div class="skill-item"><div class="skill-num">02</div><div class="skill-name">JavaScript</div><div class="skill-type">Language · Web</div></div>
+        <div class="skill-item"><div class="skill-num">03</div><div class="skill-name">Django</div><div class="skill-type">Framework · Backend</div></div>
+        <div class="skill-item"><div class="skill-num">04</div><div class="skill-name">AI Engineering</div><div class="skill-type">ML · Integration</div></div>
+        <div class="skill-item"><div class="skill-num">05</div><div class="skill-name">Networking</div><div class="skill-type">Infrastructure · ISP</div></div>
+        <div class="skill-item"><div class="skill-num">06</div><div class="skill-name">Web Dev</div><div class="skill-type">Frontend · Backend</div></div>
+        <div class="skill-item"><div class="skill-num">07</div><div class="skill-name">Starlink</div><div class="skill-type">Connectivity · EdTech</div></div>
+        <div class="skill-item"><div class="skill-num">08</div><div class="skill-name">Face Recognition</div><div class="skill-type">Computer Vision · AI</div></div>
+        <div class="skill-item"><div class="skill-num">09</div><div class="skill-name">AI Integration</div><div class="skill-type">Business · Automation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+      <p style="margin-top:1rem; color:var(--text);">Want to see the projects I build with these languages? <a href="coding.html">View my coding work</a>.</p>
+      <a class="back" href="index.html">← Back to portfolio</a>
+    </div>
+  </div>
+</body>
+</html>
