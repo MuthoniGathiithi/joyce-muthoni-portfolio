@@ -203,15 +203,18 @@
       transform: translateX(4px);
     }
 
-    .cta-primary {
+    .cta-primary,
+    .cta-primary:visited {
       background: var(--blue-bright);
-      color: var(--ink);
+      color: #ffffff !important;
       border-color: var(--blue-bright);
     }
 
-    .cta-primary:hover {
+    .cta-primary:hover,
+    .cta-primary:hover .cta-arrow {
       background: var(--blue-hover);
       border-color: var(--blue-hover);
+      color: #ffffff !important;
       transform: translateY(-3px);
       box-shadow: 0 12px 32px rgb(0, 0, 0);
     }
